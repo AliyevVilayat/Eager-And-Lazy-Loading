@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "Loading.Eager.Controllers.EagerLoadingsController",
+    "Method": "GetAllStudentsWithGroup",
+    "RelativePath": "api/EagerLoadings",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

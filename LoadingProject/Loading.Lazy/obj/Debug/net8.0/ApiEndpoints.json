@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "Loading.Lazy.Controllers.LazyLoadingsController",
+    "Method": "GetAllStudentsWithGroup",
+    "RelativePath": "api/LazyLoadings",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
