@@ -35,9 +35,9 @@ Eager Loading əvəzinə Lazy Loading-in işə düşməsini istəyiriksə, bu za
 ## Lazy Loading
 
 ```Lazy Loading```, yəni tənbəl yüklənmə ilə ```SELECT``` sorğusu həyata keçirilərkən ilk olaraq relation-lar nəzərə alınmadan datalar əldə edilir.
-Navigation property olan hər bir object-in datasının gətirilməsi isə bir qədər fərqlidir.
+Navigation property-lərin datasının gətirilməsi isə bir qədər fərqlidir.
 
-Həmin object'lərə ilk müraciət olunan zaman, həmin object üçün avtomatik olaraq SQL sorğusu yaradılır və beləliklə, relational olan datalar əldə edilir. 
+Navigation property'lərə ilk müraciət olunan zaman avtomatik olaraq SQL sorğusu yaradılır və beləliklə, datalar əldə edilir. 
 Tənbəl yüklənmə adlandırılmasının səbəbi də məhz budur.
 
 Əgər EntityFrameworkCore istifadə edəcəyiksə və Lazy Loading-in işə düşməsini istəyiriksə, DbContext üçün müəyyən konfiqurasiyalara ehtiyac vardır. 
