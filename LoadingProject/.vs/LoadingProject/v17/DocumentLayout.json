@@ -1,45 +1,57 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\LoadingProject\\",
+  "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AA7B275D-767B-403B-9A79-2F8931434F44}|Loading.Lazy\\Loading.Lazy.csproj|c:\\users\\user\\source\\repos\\loadingproject\\loading.lazy\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{AA7B275D-767B-403B-9A79-2F8931434F44}|Loading.Lazy\\Loading.Lazy.csproj|solutionrelative:loading.lazy\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{844341B9-5E64-4685-A099-FB029480E064}|Loading.Eager\\Loading.Eager.csproj|c:\\users\\user\\source\\repos\\loadingproject\\loading.eager\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{844341B9-5E64-4685-A099-FB029480E064}|Loading.Eager\\Loading.Eager.csproj|solutionrelative:loading.eager\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\source\\repos\\LoadingProject\\Loading.Eager\\Migrations\\20240821173726_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Loading.Eager\\Migrations\\20240821173726_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA7B275D-767B-403B-9A79-2F8931434F44}|Loading.Lazy\\Loading.Lazy.csproj|c:\\users\\user\\source\\repos\\loadingproject\\loading.lazy\\controllers\\lazyloadingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA7B275D-767B-403B-9A79-2F8931434F44}|Loading.Lazy\\Loading.Lazy.csproj|solutionrelative:loading.lazy\\controllers\\lazyloadingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{844341B9-5E64-4685-A099-FB029480E064}|Loading.Eager\\Loading.Eager.csproj|c:\\users\\user\\source\\repos\\loadingproject\\loading.eager\\controllers\\eagerloadingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{844341B9-5E64-4685-A099-FB029480E064}|Loading.Eager\\Loading.Eager.csproj|solutionrelative:loading.eager\\controllers\\eagerloadingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA7B275D-767B-403B-9A79-2F8931434F44}|Loading.Lazy\\Loading.Lazy.csproj|c:\\users\\user\\source\\repos\\loadingproject\\loading.lazy\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA7B275D-767B-403B-9A79-2F8931434F44}|Loading.Lazy\\Loading.Lazy.csproj|solutionrelative:loading.lazy\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA7B275D-767B-403B-9A79-2F8931434F44}|Loading.Lazy\\Loading.Lazy.csproj|c:\\users\\user\\source\\repos\\loadingproject\\loading.lazy\\entities\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA7B275D-767B-403B-9A79-2F8931434F44}|Loading.Lazy\\Loading.Lazy.csproj|solutionrelative:loading.lazy\\entities\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA7B275D-767B-403B-9A79-2F8931434F44}|Loading.Lazy\\Loading.Lazy.csproj|c:\\users\\user\\source\\repos\\loadingproject\\loading.lazy\\entities\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA7B275D-767B-403B-9A79-2F8931434F44}|Loading.Lazy\\Loading.Lazy.csproj|solutionrelative:loading.lazy\\entities\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{844341B9-5E64-4685-A099-FB029480E064}|Loading.Eager\\Loading.Eager.csproj|c:\\users\\user\\source\\repos\\loadingproject\\loading.eager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{844341B9-5E64-4685-A099-FB029480E064}|Loading.Eager\\Loading.Eager.csproj|c:\\users\\user\\desktop\\eagerandlazyloading\\loadingproject\\loading.eager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{844341B9-5E64-4685-A099-FB029480E064}|Loading.Eager\\Loading.Eager.csproj|solutionrelative:loading.eager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{844341B9-5E64-4685-A099-FB029480E064}|Loading.Eager\\Loading.Eager.csproj|c:\\users\\user\\source\\repos\\loadingproject\\loading.eager\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{AA7B275D-767B-403B-9A79-2F8931434F44}|Loading.Lazy\\Loading.Lazy.csproj|c:\\users\\user\\desktop\\eagerandlazyloading\\loadingproject\\loading.lazy\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA7B275D-767B-403B-9A79-2F8931434F44}|Loading.Lazy\\Loading.Lazy.csproj|solutionrelative:loading.lazy\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{844341B9-5E64-4685-A099-FB029480E064}|Loading.Eager\\Loading.Eager.csproj|c:\\users\\user\\desktop\\eagerandlazyloading\\loadingproject\\loading.eager\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{844341B9-5E64-4685-A099-FB029480E064}|Loading.Eager\\Loading.Eager.csproj|solutionrelative:loading.eager\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA7B275D-767B-403B-9A79-2F8931434F44}|Loading.Lazy\\Loading.Lazy.csproj|c:\\users\\user\\desktop\\eagerandlazyloading\\loadingproject\\loading.lazy\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{AA7B275D-767B-403B-9A79-2F8931434F44}|Loading.Lazy\\Loading.Lazy.csproj|solutionrelative:loading.lazy\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA7B275D-767B-403B-9A79-2F8931434F44}|Loading.Lazy\\Loading.Lazy.csproj|c:\\users\\user\\desktop\\eagerandlazyloading\\loadingproject\\loading.lazy\\contexts\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA7B275D-767B-403B-9A79-2F8931434F44}|Loading.Lazy\\Loading.Lazy.csproj|solutionrelative:loading.lazy\\contexts\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{844341B9-5E64-4685-A099-FB029480E064}|Loading.Eager\\Loading.Eager.csproj|c:\\users\\user\\desktop\\eagerandlazyloading\\loadingproject\\loading.eager\\controllers\\eagerloadingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{844341B9-5E64-4685-A099-FB029480E064}|Loading.Eager\\Loading.Eager.csproj|solutionrelative:loading.eager\\controllers\\eagerloadingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{844341B9-5E64-4685-A099-FB029480E064}|Loading.Eager\\Loading.Eager.csproj|c:\\users\\user\\desktop\\eagerandlazyloading\\loadingproject\\loading.eager\\migrations\\20240821173726_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{844341B9-5E64-4685-A099-FB029480E064}|Loading.Eager\\Loading.Eager.csproj|solutionrelative:loading.eager\\migrations\\20240821173726_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA7B275D-767B-403B-9A79-2F8931434F44}|Loading.Lazy\\Loading.Lazy.csproj|c:\\users\\user\\desktop\\eagerandlazyloading\\loadingproject\\loading.lazy\\entities\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA7B275D-767B-403B-9A79-2F8931434F44}|Loading.Lazy\\Loading.Lazy.csproj|solutionrelative:loading.lazy\\entities\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA7B275D-767B-403B-9A79-2F8931434F44}|Loading.Lazy\\Loading.Lazy.csproj|c:\\users\\user\\desktop\\eagerandlazyloading\\loadingproject\\loading.lazy\\entities\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA7B275D-767B-403B-9A79-2F8931434F44}|Loading.Lazy\\Loading.Lazy.csproj|solutionrelative:loading.lazy\\entities\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA7B275D-767B-403B-9A79-2F8931434F44}|Loading.Lazy\\Loading.Lazy.csproj|c:\\users\\user\\desktop\\eagerandlazyloading\\loadingproject\\loading.lazy\\controllers\\lazyloadingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA7B275D-767B-403B-9A79-2F8931434F44}|Loading.Lazy\\Loading.Lazy.csproj|solutionrelative:loading.lazy\\controllers\\lazyloadingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{844341B9-5E64-4685-A099-FB029480E064}|Loading.Eager\\Loading.Eager.csproj|c:\\users\\user\\desktop\\eagerandlazyloading\\loadingproject\\loading.eager\\entities\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{844341B9-5E64-4685-A099-FB029480E064}|Loading.Eager\\Loading.Eager.csproj|solutionrelative:loading.eager\\entities\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{844341B9-5E64-4685-A099-FB029480E064}|Loading.Eager\\Loading.Eager.csproj|c:\\users\\user\\desktop\\eagerandlazyloading\\loadingproject\\loading.eager\\entities\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{844341B9-5E64-4685-A099-FB029480E064}|Loading.Eager\\Loading.Eager.csproj|solutionrelative:loading.eager\\entities\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{844341B9-5E64-4685-A099-FB029480E064}|Loading.Eager\\Loading.Eager.csproj|c:\\users\\user\\desktop\\eagerandlazyloading\\loadingproject\\loading.eager\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{844341B9-5E64-4685-A099-FB029480E064}|Loading.Eager\\Loading.Eager.csproj|solutionrelative:loading.eager\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
@@ -50,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,133 +70,164 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Lazy\\Contexts\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Loading.Lazy\\Contexts\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Lazy\\Contexts\\AppDbContext.cs",
+              "RelativeToolTip": "Loading.Lazy\\Contexts\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-26T15:47:02.681Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\LoadingProject\\Loading.Lazy\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Lazy\\appsettings.json",
               "RelativeDocumentMoniker": "Loading.Lazy\\appsettings.json",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\LoadingProject\\Loading.Lazy\\appsettings.json",
+              "ToolTip": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Lazy\\appsettings.json",
               "RelativeToolTip": "Loading.Lazy\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-08-21T17:44:08.882Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\LoadingProject\\Loading.Eager\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Eager\\appsettings.json",
               "RelativeDocumentMoniker": "Loading.Eager\\appsettings.json",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\LoadingProject\\Loading.Eager\\appsettings.json",
+              "ToolTip": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Eager\\appsettings.json",
               "RelativeToolTip": "Loading.Eager\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-08-21T17:43:57.863Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "20240821173726_Initial.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\LoadingProject\\Loading.Eager\\Migrations\\20240821173726_Initial.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Eager\\Migrations\\20240821173726_Initial.cs",
               "RelativeDocumentMoniker": "Loading.Eager\\Migrations\\20240821173726_Initial.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\LoadingProject\\Loading.Eager\\Migrations\\20240821173726_Initial.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Eager\\Migrations\\20240821173726_Initial.cs",
               "RelativeToolTip": "Loading.Eager\\Migrations\\20240821173726_Initial.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-21T17:37:26.612Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-21T17:37:26.612Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Student.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\LoadingProject\\Loading.Lazy\\Entities\\Student.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Lazy\\Entities\\Student.cs",
               "RelativeDocumentMoniker": "Loading.Lazy\\Entities\\Student.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\LoadingProject\\Loading.Lazy\\Entities\\Student.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Lazy\\Entities\\Student.cs",
               "RelativeToolTip": "Loading.Lazy\\Entities\\Student.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-21T17:22:17.574Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-21T17:22:17.574Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "Group.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\LoadingProject\\Loading.Lazy\\Entities\\Group.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Lazy\\Entities\\Group.cs",
               "RelativeDocumentMoniker": "Loading.Lazy\\Entities\\Group.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\LoadingProject\\Loading.Lazy\\Entities\\Group.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Lazy\\Entities\\Group.cs",
               "RelativeToolTip": "Loading.Lazy\\Entities\\Group.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-21T17:20:22.605Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-21T17:20:22.605Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\LoadingProject\\Loading.Eager\\Properties\\launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Eager\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Loading.Eager\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\LoadingProject\\Loading.Eager\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Eager\\Properties\\launchSettings.json",
               "RelativeToolTip": "Loading.Eager\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-08-21T17:14:51.357Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-21T17:14:51.357Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\LoadingProject\\Loading.Eager\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Eager\\Program.cs",
               "RelativeDocumentMoniker": "Loading.Eager\\Program.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\LoadingProject\\Loading.Eager\\Program.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Eager\\Program.cs",
               "RelativeToolTip": "Loading.Eager\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-21T17:05:08.291Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "LazyLoadingsController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\LoadingProject\\Loading.Lazy\\Controllers\\LazyLoadingsController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Lazy\\Controllers\\LazyLoadingsController.cs",
               "RelativeDocumentMoniker": "Loading.Lazy\\Controllers\\LazyLoadingsController.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\LoadingProject\\Loading.Lazy\\Controllers\\LazyLoadingsController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Lazy\\Controllers\\LazyLoadingsController.cs",
               "RelativeToolTip": "Loading.Lazy\\Controllers\\LazyLoadingsController.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAADwvykAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-21T17:04:54.607Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-21T17:04:54.607Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\LoadingProject\\Loading.Lazy\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Lazy\\Program.cs",
               "RelativeDocumentMoniker": "Loading.Lazy\\Program.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\LoadingProject\\Loading.Lazy\\Program.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Lazy\\Program.cs",
               "RelativeToolTip": "Loading.Lazy\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-21T17:05:54.491Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "EagerLoadingsController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\LoadingProject\\Loading.Eager\\Controllers\\EagerLoadingsController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Eager\\Controllers\\EagerLoadingsController.cs",
               "RelativeDocumentMoniker": "Loading.Eager\\Controllers\\EagerLoadingsController.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\LoadingProject\\Loading.Eager\\Controllers\\EagerLoadingsController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Eager\\Controllers\\EagerLoadingsController.cs",
               "RelativeToolTip": "Loading.Eager\\Controllers\\EagerLoadingsController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAkwBQAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAowB8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-21T17:04:41.325Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-21T17:04:41.325Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Student.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Eager\\Entities\\Student.cs",
+              "RelativeDocumentMoniker": "Loading.Eager\\Entities\\Student.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Eager\\Entities\\Student.cs",
+              "RelativeToolTip": "Loading.Eager\\Entities\\Student.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-21T21:55:10.727Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Group.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Eager\\Entities\\Group.cs",
+              "RelativeDocumentMoniker": "Loading.Eager\\Entities\\Group.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Eager\\Entities\\Group.cs",
+              "RelativeToolTip": "Loading.Eager\\Entities\\Group.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-21T21:55:29.872Z"
             }
           ]
         }

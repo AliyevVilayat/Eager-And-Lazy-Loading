@@ -6,6 +6,6 @@ public class Group
     public DateTime StartedDate { get; set; }
     public DateTime FinishDate { get; set; }
 
-    public virtual ICollection<Student> Students { get; set; }
+    public ICollection<Student> Students { get; set; }
 
 }

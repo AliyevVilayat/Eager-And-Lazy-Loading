@@ -13,7 +13,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<AppDbContext>(opt =>
 {
-    opt.UseSqlServer(builder.Configuration.GetConnectionString("PC"));
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
 
 });
 

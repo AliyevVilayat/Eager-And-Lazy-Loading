@@ -13,9 +13,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<AppDbContext>(opt =>
 {
-    //EntityFrameworkCore default olaraq Eager Loading tətbiq etdiyi üçün yalnız UseLazyLoadingProxies() method tətbiq edilərək Lazy Loading'ə çevirə bilərik
     opt.UseLazyLoadingProxies();
-    opt.UseSqlServer(builder.Configuration.GetConnectionString("PC"));
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
 
 });
 

@@ -4683,11 +4683,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\repos\\LoadingProject\\Loading.Eager\\Loading.Eager.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Eager\\Loading.Eager.csproj",
       "projectName": "Loading.Eager",
-      "projectPath": "C:\\Users\\User\\source\\repos\\LoadingProject\\Loading.Eager\\Loading.Eager.csproj",
+      "projectPath": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Eager\\Loading.Eager.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\source\\repos\\LoadingProject\\Loading.Eager\\obj\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\EagerAndLazyLoading\\LoadingProject\\Loading.Eager\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

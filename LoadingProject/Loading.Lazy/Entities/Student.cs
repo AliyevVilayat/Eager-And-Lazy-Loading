@@ -8,7 +8,6 @@ public class Student
     public int Age { get; set; }
     public int GroupId { get; set; }
 
-    //Relational Property'lər üçün mütləq VIRTUAL keyword ilə declare olunmalıdır
     public virtual Group Group { get; set; }
 }
 

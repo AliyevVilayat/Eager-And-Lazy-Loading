@@ -6,7 +6,6 @@ public class Group
     public DateTime StartedDate { get; set; }
     public DateTime FinishDate { get; set; }
 
-    //Relational Property'lər üçün mütləq VIRTUAL keyword ilə declare olunmalıdır
     public virtual ICollection<Student> Students { get; set; }
 
 }

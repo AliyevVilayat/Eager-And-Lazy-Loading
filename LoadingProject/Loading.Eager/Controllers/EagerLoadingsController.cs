@@ -21,11 +21,8 @@ public class EagerLoadingsController : ControllerBase
     {
         await SeedData();
 
-        //Lazy Loading Sql Query generate olan zaman avtomatik şəkildə dataları gətirsə də Eager Loading isə Include method'u vasitəsi ilə dataları gətirir. Aşağıda yerləşən query execute olan zaman Group property null olaraq qayıdacaq.
         List<Student> students = await _appDbContext.Set<Student>().ToListAsync();
-
-        //Aşağıda yerləşən query execute olan zaman isə Group property dolu olaraq qayıdacaq.
-        students = await _appDbContext.Set<Student>().Include(s => s.Group).ToListAsync(); //Eager loading
+        students = await _appDbContext.Set<Student>().Include(s => s.Group).ToListAsync(); 
        
         return Ok(students);
     }

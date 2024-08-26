@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Loading.Lazy")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aa182123bfd63c4eb9fa5b6fbcdd2bcb85c745bb")]
 [assembly: System.Reflection.AssemblyProductAttribute("Loading.Lazy")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Loading.Lazy")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
