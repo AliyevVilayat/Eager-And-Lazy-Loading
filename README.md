@@ -1,50 +1,50 @@
 # Loading
 
-Bildiyimiz kimi Database’lə əlaqə qurub, datalar üzərində işləmək üçün ```ORM(Object Relational Mapping)```’ə ehtiyac duyulur. 
-ORM istifadə edən zaman, işləmə sürətinə görə fərqli şəkildə ```SELECT``` sorğuları həyata keçirilir. 
-C# daxilində, Relation’lardan asılı olaraq SELECT sorğuları bir qədər fərqlənirlər. 
-Yəni ```JOIN```’lər SELECT sorğusuna həm manual olaraq, həm də avtomatik olaraq əlavə oluna bilər.
+Bildiyimiz kimi Database-lə əlaqə qurub, datalar üzərində işləmək üçün ```ORM (Object Relational Mapping)``` istifadə olunur. 
+ORM-dən istifadə edərkən işləmə sürətinə görə fərqli şəkildə ```SELECT``` sorğuları həyata keçirilir. 
+C# daxilində, Relation-lardan asılı olaraq SELECT sorğuları bir qədər fərqlənir. 
+Yəni, ```JOIN```-lər SELECT sorğusuna həm manual, həm də avtomatik olaraq əlavə oluna bilər.
 
 
 ## Eager Loading
 
 ```Eager Loading``` ilə SELECT sorğusu həyata keçirilən zaman əlavə yüklənmənin qarşısı alınır. 
-Əlavə yüklənmə dedikdə, Entity class'ın daxilində əgər hər hansısa Navigation property yer alarsa yəni hər hansısa bir table ilə relation mövcuddursa, bu zaman Entity dataları üçün SELECT sorğusunun generate olunması zamanı JOIN'lər sorğuda yer almayacaq.
+Əlavə yüklənmə dedikdə, Entity class'ın daxilində hər hansısa Navigation property mövcuddursa, yəni hər hansısa bir table ilə relation varsa, bu zaman Entity dataları üçün SELECT sorğusu yaradılarkən JOIN-lər sorğuda yer almayacaq.
 
 ```csharp
 List<TEntity> entityList = await _context.Set<TEntity>().ToListAsync();
 ```
-Yuxarıda yerləşən ```LINQ Method Syntax``` ilə yaradılan sorğusu nəticəsi aşağıdaki kimi olacaq
+Yuxarıda yerləşən ```LINQ Method Syntax``` ilə yaradılan sorğunun nəticəsi aşağıdaki kimi olacaq
 ```sql
 SELECT * FROM Entities
 ```
 
-Sözü gedən əlavə yüklənmənin qarşısı alınması nəticəsində, göründüyü kimi heç bir JOIN prosesi query'dər yer almayıb. Bu da o deməkdir ki, Navigation olaraq qeyd olunan property null olaraq qayıdacaq.
-Relational olan data(lar) ehtiyac yarandığı təqdirdə bu JOIN(lər) bizim tərəfimizdən manual olaraq əlavə edilməlidir. ```Include``` və ```ThenInclude``` method'lar məhz bunun üçündür.
+Sözügedən əlavə yüklənmənin qarşısı alınması nəticəsində göründüyü kimi, heç bir JOIN prosesi query-də yer almayıb. Bu da o deməkdir ki, Navigation olaraq qeyd olunan property null olaraq qayıdacaq.
+Relational olan data(lar) ehtiyac yarandığı təqdirdə, bu JOIN(lər) bizim tərəfimizdən manual olaraq əlavə edilməlidir. ```Include``` və ```ThenInclude``` method'lar məhz bunun üçündür.
 
-Aşağıda yerləşən query execute olan zaman Relation yaradan property null yerinə datalar yüklənmiş olaraq qayıdacaq.
+Aşağıda yerləşən query execute olunduqda, Navigation property null gəlmək əvəzinə, datalar yüklənmiş olaraq qayıdacaq.
 ```csharp
 List<TEntity> entityList = await _context.Set<TEntity>().Include(e => e.RelationalProperty).ToListAsync();
 ```
         
-LINQ Method Syntax və ya LINQ Query Syntax vasitəsi ilə SELECT sorğusu generate edəcəyiksə by default Eager Loading işə düşəcək. 
+Əgər LINQ Method Syntax və ya LINQ Query Syntax vasitəsilə SELECT sorğusu yaradacağıqsa, by default Eager Loading işə düşəcək. 
 
-Eager Loading əvəzinə Lazy Loading'in işə düşməsini istəyiriksə bu zaman ```DbContext```'lə bağlı müəyyən Configuration’lara ehtiyac vardır. 
+Eager Loading əvəzinə Lazy Loading-in işə düşməsini istəyiriksə, bu zaman ```DbContext```-lə bağlı müəyyən konfiqurasiyalara ehtiyac var. 
 
 
 ## Lazy Loading
 
-```Lazy Loading```, yəni tənbəl yüklənmə ilə ```SELECT``` sorğusu həyata keçirilən zaman ilk olaraq relation’lar nəzərə alınmadan datalar əldə edilir.
-Navigation property olan hər bir object'in datasının gətirilməsi isə bir qədır fərqlidir.
+```Lazy Loading```, yəni tənbəl yüklənmə ilə ```SELECT``` sorğusu həyata keçirilərkən ilk olaraq relation-lar nəzərə alınmadan datalar əldə edilir.
+Navigation property olan hər bir object-in datasının gətirilməsi isə bir qədər fərqlidir.
 
-Həmin object'lərə ilk müraciət olunan zaman avtomatik olaraq həmin object üçün SQL sorğusu generate olunur. Beləliklə relational olan datalar əldə edilir. 
-Tənbəl yüklənmə adlandırılmasının da səbəbi elə məhz budur.
+Həmin object'lərə ilk müraciət olunan zaman, həmin object üçün avtomatik olaraq SQL sorğusu yaradılır və beləliklə, relational olan datalar əldə edilir. 
+Tənbəl yüklənmə adlandırılmasının səbəbi də məhz budur.
 
-EntityFrameworkCore istifadə edəcəyiksə və Lazy Loading'in işə düşməsini istəyiriksə DbContext üçün müəyyən Configuration’lara ehtiyac vardır. 
+Əgər EntityFrameworkCore istifadə edəcəyiksə və Lazy Loading-in işə düşməsini istəyiriksə, DbContext üçün müəyyən konfiqurasiyalara ehtiyac vardır. 
 
-İlk olaraq NuGet Package’dən ```Microsoft.EntityFrameworkCore.Proxies``` package yüklənməlidir.
+İlk olaraq NuGet Package-dən ```Microsoft.EntityFrameworkCore.Proxies``` paketi yüklənməlidir.
 
-Daha sonra ```IoC``` üçün yazılan AddDbContext method daxilində ```UseLazyLoadingProxies()``` method aşağıdaki şəkildə call olunmalıdır.
+Daha sonra, ```IoC``` üçün yazılan AddDbContext method daxilində ```UseLazyLoadingProxies()``` method-u aşağıdaki şəkildə call olunmalıdır.
 
 ```csharp
 builder.Services.AddDbContext<AppDbContext>(opt =>
@@ -57,9 +57,9 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
 
 ```
 
-Həmçinin bütün Entity’lər daxilində Relation’u işarəliyən bütün property’lər ```Virtual``` olaraq qeyd olunmalıdır. 
+Həmçinin, bütün Entity-lər daxilində Relation-u işarəliyən bütün property-lər ```Virtual``` olaraq qeyd olunmalıdır. 
 
-Əks təqdirdə ```System.InvalidOperationException``` exception qarşılaşacağıq.
+Əks təqdirdə, ```System.InvalidOperationException``` ilə qarşılaşacağıq.
 
 > **Exception mesaj:**
 'UseChangeTrackingProxies' requires all entity types to be public, unsealed, have virtual properties, and have a public or protected constructor.
@@ -80,7 +80,7 @@ public class TEntity2
     public string Prop2 { get; set; }
 
     public int TEntityId { get; set; }
-    public TEntity TEntity { get; set; } // Navigation Property, Virutal olaraq təyin olunmadığı üçün SELECT sorğusü execute olan zaman yəni Lazy Loading işə düşən proxy'lər düzgün işləməyəcək və beləliklə exception alacağıq.
+    public TEntity TEntity { get; set; } // Navigation Property Virutal olaraq təyin edilmədiyi üçün SELECT sorğusu icra olunduqda, yəni Lazy Loading işə düşdükdə, proxy-lər düzgün işləməyəcək və beləliklə exception alacağıq.
 }
 
 ```
