@@ -1,4 +1,4 @@
-# Loading
+# Loading Related Data
 
 Bildiyimiz kimi Database-lə əlaqə qurub, datalar üzərində işləmək üçün ```ORM (Object Relational Mapping)``` istifadə olunur. 
 ORM-dən istifadə edərkən işləmə sürətinə görə fərqli şəkildə ```SELECT``` sorğuları həyata keçirilir. 
@@ -8,7 +8,8 @@ Yəni, ```JOIN```-lər SELECT sorğusuna həm manual, həm də avtomatik olaraq 
 
 ## Eager Loading
 
-```Eager Loading``` ilə SELECT sorğusu həyata keçirilən zaman əlavə yüklənmənin qarşısı alınır. 
+```Eager Loading``` generate olunan SELECT sorğuya ```Related Data```-ların parça-parça əlavə edilməsini və bu prosesin `istəkli` şəkildə baş verməsini təmin edən bir yoldur.
+Eager Loading ilə SELECT sorğusu həyata keçirilən zaman əlavə yüklənmənin qarşısı alınır. 
 Əlavə yüklənmə dedikdə, Entity class'ın daxilində hər hansısa Navigation property mövcuddursa, yəni hər hansısa bir table ilə relation varsa, bu zaman Entity dataları üçün SELECT sorğusu yaradılarkən JOIN-lər sorğuda yer almayacaq.
 
 ```csharp
@@ -21,16 +22,27 @@ SELECT * FROM Entities
 
 Sözügedən əlavə yüklənmənin qarşısı alınması nəticəsində göründüyü kimi, heç bir JOIN prosesi query-də yer almayıb. Bu da o deməkdir ki, Navigation olaraq qeyd olunan property null olaraq qayıdacaq.
 Relational olan data(lar) ehtiyac yarandığı təqdirdə, bu JOIN(lər) bizim tərəfimizdən manual olaraq əlavə edilməlidir. ```Include``` və ```ThenInclude``` method'lar məhz bunun üçündür.
-
-Aşağıda yerləşən query execute olunduqda, Navigation property null gəlmək əvəzinə, datalar yüklənmiş olaraq qayıdacaq.
-```csharp
-List<TEntity> entityList = await _context.Set<TEntity>().Include(e => e.RelationalProperty).ToListAsync();
-```
-        
+       
 Əgər LINQ Method Syntax və ya LINQ Query Syntax vasitəsilə SELECT sorğusu yaradacağıqsa, by default Eager Loading işə düşəcək. 
 
 Eager Loading əvəzinə Lazy Loading-in işə düşməsini istəyiriksə, bu zaman ```DbContext```-lə bağlı müəyyən konfiqurasiyalara ehtiyac var. 
 
+## Include
+SELECT sorğusu yaradılan zaman Relational Data-ların da əldə olunması üçün hər bir Navigation Property nəzərə alınaraq Include method tətbiq edilir beləliklə, sorğu nəticəsində Relation Data-lar da əldə edilir. Eager Loading-i həyata keçirmək üçün istifadə olunan bir method-dur. 
+
+Aşağıda yerləşən query execute olunduqda, Navigation property null gəlmək əvəzinə, datalar yüklənmiş olaraq qayıdacaq.
+
+```csharp
+List<TEntity> entityList = await _context.Set<TEntity>().Include(e => e.RelationalProperty).ToListAsync();
+```
+Yuxarıda yerləşən LINQ Method Syntax ilə yaradılan sorğunun nəticəsi aşağıdaki kimi olacaq
+
+```sql
+SELECT *
+FROM Entities e
+JOIN
+RelationTable rt ON e.RelationalTableId = rt.Id      
+```
 
 ## Lazy Loading
 
