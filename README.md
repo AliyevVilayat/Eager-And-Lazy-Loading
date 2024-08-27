@@ -85,6 +85,63 @@ public class TEntity2
 
 ```
 
+## Manual Lazy Loading(ILazyLoader)
+
+Proxy-lər bütün platformalarda dəstəklənməyə bilər, buna görə də biz proxy-lər olmadan da Lazy Loading-i işə salmağı bacarmalıyıq.
+
+İlk olaraq NuGet Package-dən ```Microsoft.EntityFrameworkCore.Abstractions``` paketi yüklənməlidir.
+
+Manual olaraq həyata keçirəcəyimiz üçün Entity-lər daxilində yer alan Navigation property-lərin Virtual olaraq işarələnməsinə ehtiyac yoxdur.
+
+Dependency Injection istifadə edilərək, ILazyLoader tipində parametr qəbul edən Constructor yazılmalı və bu parametr private olan Field’a mənimsədilməlidir. Bu proses Lazy Loading-in baş verməsini istədiyimiz bütün Entity-lərə tətbiq edirik.
+
+Daha sonra Navigation property üçün Entity daxilində ayrı bir property yaradılır. Navigation property-in `Get` və `Set` method-ları override edilərək aşağıdaki şəkildə yazılır.
+
+```csharp
+
+public class TEntity
+{
+    private readonly ILazyLoader _lazyLoader;
+    private TEntity2 _tEntity2;
+
+    public int Id { get; set; }
+    public string Prop1 { get; set; }
+
+    public TEntity2 TEntity2
+    {
+        get
+        {
+            _lazyLoader.Load(this, ref _tEntity2);
+        }
+        set
+        {
+            _tEntity2 = value;
+        }
+    }
+
+    public TEntity()
+    {
+
+    }
+    public TEntity(ILazyLoader lazyLoader)
+    {
+        _lazyLoader = lazyLoader;
+    }
+
+}
+
+public class TEntity2
+{
+    public int Id { get; set; }
+    public string Prop2 { get; set; }
+    public int TEntityId { get; set; }
+    public TEntity TEntity { get; set; }
+}
+```
+## N+1 Selects Problem
+
+Lazy Loading enable olduqda, dataların navigation property-lərə müraciəti zamanı sorğu yaradaraq məlumatları gətirdiyini artıq bilirik. Bu müraciətlər döngü içərisində hər bir entity obyekt üçün baş verdikdə, dəfələrlə sorğu yaradılaraq database-ə göndərilir. Bu proses N+1 problemi adlanır. Çünki dəfələrlə sorğu göndərilməsi performans baxımından heç də yaxşı deyil və həmçinin bu, database connection-ın davamlı olaraq açıq qalmasına gətirib çıxarır. Eager Loading istifadəsi bu problemin qarşısını rahatlıqla alır.
+
 
 
 ## LinkedIn
