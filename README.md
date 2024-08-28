@@ -34,15 +34,23 @@ Aşağıda yerləşən query execute olunduqda, Navigation property null gəlmə
 
 ```csharp
 List<TEntity> entityList = await _context.Set<TEntity>().Include(e => e.RelationalProperty).ToListAsync();
+
+//və ya
+
+List<TEntity> entityList = await _context.Set<TEntity>().Include(relationalPropertyName).ToListAsync();
 ```
+
 Yuxarıda yerləşən LINQ Method Syntax ilə yaradılan sorğunun nəticəsi aşağıdaki kimi olacaq
 
 ```sql
 SELECT *
 FROM Entities e
-JOIN
-RelationTable rt ON e.RelationalTableId = rt.Id      
+JOIN RelationTable rt ON e.RelationalTableId = rt.Id      
 ```
+
+## ThenInclude
+SELECT sorğusu yaradılan zaman Relational Data-ları əldə etmək üçün Include method-u istifadə etməli olduğumuzu bilirik. Əgər Bu Relational olan data-ların daxilində də həmçinin Relational data-lar yer alarsa və onları əldə etməyə ehtiyac duyularsa, bu zaman ThenInclude method-dan istifadə edilir.
+
 
 ## Lazy Loading
 
