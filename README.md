@@ -33,11 +33,11 @@ SELECT sorğusu yaradılan zaman Relational Data-ların da əldə olunması üç
 Aşağıda yerləşən query execute olunduqda, Navigation property null gəlmək əvəzinə, datalar yüklənmiş olaraq qayıdacaq.
 
 ```csharp
-List<TEntity> entityList = await _context.Set<TEntity>().Include(e => e.RelationalProperty).ToListAsync();
+List<TEntity> entityList = await _context.Set<TEntity>().Include(e => e.NavigationProperty).ToListAsync();
 
 //və ya
 
-List<TEntity> entityList = await _context.Set<TEntity>().Include(relationalPropertyName).ToListAsync();
+List<TEntity> entityList = await _context.Set<TEntity>().Include(navigationPropertyName).ToListAsync();
 ```
 
 Yuxarıda yerləşən LINQ Method Syntax ilə yaradılan sorğunun nəticəsi aşağıdaki kimi olacaq
@@ -45,11 +45,46 @@ Yuxarıda yerləşən LINQ Method Syntax ilə yaradılan sorğunun nəticəsi a�
 ```sql
 SELECT *
 FROM Entities e
-JOIN RelationTable rt ON e.RelationalTableId = rt.Id      
+LEFT JOIN RelationTable rt ON e.RelationalTableId = rt.Id      
 ```
 
+## Filtered Include
+Biz Include method-u tətbiq edən zaman, gələn datalar üzərində filterasiya həyata keçirə bilərik. Bu yalnız ICollection tipində olan Navigation property-lərə şamil edilir. Filterasiyaya, Where, OrderBy, OrderByDescending, ThenBy, ThenByDescending, Skip, Take.
+
+Change Tracker-in aktiv olduğu situasiyalarda Include tətbiq edilən sorğu nəticəsində filterasiya mövcud olduğu halda gözlənilməyən data-lar gələ bilər. Bu daha əvvəl SELECT sorğusu nəticəsində gəlmiş və Change Tracker tərəfindən izlənilən və filterasiyadan keçməmiş datalara aiddir. Düzgün şəkildə Filtered Include prosesi üçün Change Tracker tərəfindən izlənməyən data-ların SELECT sorğusuna tətbiq edilməlidir.
+
+
 ## ThenInclude
-SELECT sorğusu yaradılan zaman Relational Data-ları əldə etmək üçün Include method-u istifadə etməli olduğumuzu bilirik. Əgər Bu Relational olan data-ların daxilində də həmçinin Relational data-lar yer alarsa və onları əldə etməyə ehtiyac duyularsa, bu zaman ThenInclude method-dan istifadə edilir.
+SELECT sorğusu yaradılan zaman Relational Data-ları əldə etmək üçün Include method-u istifadə etməli olduğumuzu bilirik. Include edilən table daxilində də Relational data-lar yer alarsa həmçinin onları əldə etməyə ehtiyac duyula bilər.
+
+Biz Include vasitəsi ilə bu funskiyasını həyata keçirə bilərik, lakin sorğu zamanı Include edilən Navigation property daxilində yer alan Navigation property ICollection tipində olarsa, Include tətbiq edərək istədiyimiz nəticəni əldə edə bilməyəcəyik.
+
+```csharp
+List<TEntity> entityList = await _context.Set<TEntity>()
+            .Include(e => e.NavigationProperty)
+            .Include(e => e.NavigationProperty.InnerNavigationProperty)
+            .ToListAsync(); 
+
+```
+
+Bunun yerinə ThenInclude method istifadə edilir və biz Inlclude method tətbiq etdikdən sonra göndərdiyimiz NavigationProperty-ni ThenInclude ilə əldə edib SELECT sorğusuna onun Relational Data-larını əldə etmək üçün JOIN edə bilərik.
+
+```csharp
+List<TEntity> entityList = await _context.Set<TEntity>()
+            .Include(e => e.NavigationProperty)
+            .ThenInclude(rP => rP.InnerNavigationProperty)
+            .ToListAsync(); 
+
+```
+
+Yuxarıda yerləşən LINQ Method Syntax ilə yaradılan sorğunun nəticəsi aşağıdaki kimi olacaq
+
+```sql
+SELECT *
+FROM Entities e
+LEFT JOIN RelationTable rt ON e.RelationalTableId = rt.Id
+LEFT JOIN InnerRelationalTable irt ON rt.InnerRalationalTableId = irt.Id      
+```
 
 
 ## Lazy Loading
