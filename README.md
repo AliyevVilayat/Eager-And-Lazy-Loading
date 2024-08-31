@@ -49,10 +49,9 @@ LEFT JOIN RelationTable rt ON e.RelationalTableId = rt.Id
 ```
 
 ## Filtered Include
-Biz Include method-u tətbiq edən zaman, gələn datalar üzərində filterasiya həyata keçirə bilərik. Bu yalnız ICollection tipində olan Navigation property-lərə şamil edilir. Filterasiyaya, Where, OrderBy, OrderByDescending, ThenBy, ThenByDescending, Skip, Take.
+Biz Include method-u tətbiq edən zaman, gələn datalar üzərində filterasiya həyata keçirə bilərik. Filterasiya yalnız ICollection tipində olan Navigation property-lərə şamil edilir. Filterasiyaya, Where, OrderBy, OrderByDescending, ThenBy, ThenByDescending, Skip, Take method-lar aiddir.
 
-Change Tracker-in aktiv olduğu situasiyalarda Include tətbiq edilən sorğu nəticəsində filterasiya mövcud olduğu halda gözlənilməyən data-lar gələ bilər. Bu daha əvvəl SELECT sorğusu nəticəsində gəlmiş və Change Tracker tərəfindən izlənilən və filterasiyadan keçməmiş datalara aiddir. Düzgün şəkildə Filtered Include prosesi üçün Change Tracker tərəfindən izlənməyən data-ların SELECT sorğusuna tətbiq edilməlidir.
-
+Change Tracker-in aktiv olduğu situasiyalarda Filtered Include tətbiq edilən sorğu nəticəsində filterasiya olduğu halda gözlənilməyən data-lar gələ bilər. Bu daha əvvəl SELECT sorğusu nəticəsində gəlmiş və Change Tracker tərəfindən izlənilən və filterasiyadan keçməmiş datalara aiddir. Düzgün şəkildə Filtered Include prosesi üçün Change Tracker tərəfindən izlənməyən data-ların SELECT sorğusuna tətbiq edilməlidir.
 
 ## ThenInclude
 SELECT sorğusu yaradılan zaman Relational Data-ları əldə etmək üçün Include method-u istifadə etməli olduğumuzu bilirik. Include edilən table daxilində də Relational data-lar yer alarsa həmçinin onları əldə etməyə ehtiyac duyula bilər.
