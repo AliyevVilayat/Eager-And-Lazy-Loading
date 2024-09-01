@@ -23,9 +23,64 @@ SELECT * FROM Entities
 Sözügedən əlavə yüklənmənin qarşısı alınması nəticəsində göründüyü kimi, heç bir JOIN prosesi query-də yer almayıb. Bu da o deməkdir ki, Navigation olaraq qeyd olunan property null olaraq qayıdacaq.
 Relational olan data(lar) ehtiyac yarandığı təqdirdə, bu JOIN(lər) bizim tərəfimizdən manual olaraq əlavə edilməlidir. ```Include``` və ```ThenInclude``` method'lar məhz bunun üçündür.
        
-Əgər LINQ Method Syntax və ya LINQ Query Syntax vasitəsilə SELECT sorğusu yaradacağıqsa, by default Eager Loading işə düşəcək. 
+Əgər LINQ Method Syntax və ya LINQ Query Syntax vasitəsilə SELECT sorğusu yaradıb Realted Data-ları əldə etmək istəsək, by default Eager Loading işə düşəcək. 
+
+```csharp
+List<TEntity> entityList = await _context.Set<TEntity>().Include(e=>e.TEntities2).ToListAsync();
+
+// və ya
+
+List<TEntity> entityList = await _context.Set<TEntity>().Include("TEntities2").ToListAsync();
+
+```
 
 Eager Loading əvəzinə Lazy Loading-in işə düşməsini istəyiriksə, bu zaman ```DbContext```-lə bağlı müəyyən konfiqurasiyalara ehtiyac var. 
+
+
+## Explicit Loading
+
+Yaradılan SELECT sorğusunda, Relational Data-ların gətirilib-gətirilməməsi prosesi daha sonradan şərtlərə və ya ehtiyaclara uyğun olaraq baş verməsi yanaşması ```Explicit Loading``` adlanır.
+
+Explicit Loading tətbiq etmədən yuxarıda bəhs olunan yanaşma aşağıdakı şəkildə olacaqdır. 
+```csharp
+       TEntity2 tEntity2 = await _context.Set<TEntity2>().FindAsync(id);
+       if(tEntity2.Prop2 == "TestValue")
+       {
+              TEntity tEntity = await _context.Set<TEntity>().Find(tEntity2.TEntityId);
+       }
+```
+Yuxarıdaki kod blokunu yazmaq əvəzinə Explicit Loading tətbiq edərək daha oxunaqlı və düzgün şəkildə kod yaza bilərik.
+
+### Reference
+Explicit Loading tətbiq edilərkən data-ları əldə etmək istənilən Table-ın Navigation Property-si tək obyekt olarsa(yəni Collection deyilsə) bu zaman ```Reference``` method istifadə edilir.
+
+```csharp
+       TEntity2 tEntity2 = await _context.Set<TEntity2>().FindAsync(id);
+       if(tEntity2.Prop2 == "TestValue")
+       {
+              _context.Entry(tEntity2).Reference(e2=>e2.TEntity).Load();
+              //və ya
+              await _context.Entry(tEntity2).Reference(e2=>e2.TEntity).LoadAsync();
+       }
+```
+
+### Collection
+Explicit Loading tətbiq edilərkən data-larını əldə etmək istənilən Table-ın Navigation Property-si kolleksiya olarsa bu zaman ```Collection``` method istifadə edilir.
+
+```csharp
+       TEntity tEntity = await _context.Set<TEntity>().FindAsync(id);
+       if(tEntity.Prop1 == "TestValue")
+       {
+              _context.Entry(tEntity).Collection(e2=>e2.TEntity).Load();
+              //və ya
+              await _context.Entry(tEntity).Collection(e2=>e2.TEntity).LoadAsync();
+       }
+```
+
+```Not:Relational Datalar əldə edildikdən sonra əsas data-larla Context vasitəsilə əlaqələndirilərək saxlanılır. Çünki EntityFramework daha əvvəldə execute edilən sorğular nəticəsində get olunan data-ları daha sonraki proseslərdə istifadə edir.```
+
+
+Collection method istifadəsi zamanı biz Relational data-ları Query method ilə Queryable halına salıb həm Aggregate operatorları, həm də filterasiya tətbiq edə bilərik.
 
 
 ## Lazy Loading
