@@ -1,41 +1,59 @@
 # Loading Related Data
 
-Bildiyimiz kimi Database-lə əlaqə qurub, datalar üzərində işləmək üçün ```ORM (Object Relational Mapping)``` istifadə olunur. 
-ORM-dən istifadə edərkən işləmə sürətinə görə fərqli şəkildə ```SELECT``` sorğuları həyata keçirilir. 
-C# daxilində, Relation-lardan asılı olaraq SELECT sorğuları bir qədər fərqlənir. 
-Yəni, ```JOIN```-lər SELECT sorğusuna həm manual, həm də avtomatik olaraq əlavə oluna bilər.
+Bildiyimiz kimi Database-lə əlaqə qurub, datalar üzərində işləmək üçün ```ORM (Object Relational Mapping)``` istifadə olunur.
+ORM vasitəsi ilə Database-lə bağlı əməliyyatları istər QUERY və Method-lar vasitəsi ilə həyata keçirmək mümkündür. 
+Bir sıra mənbələrdə ```DQL(Data Query Language)``` command, bəzi mənbələrdə isə ```DML(Data Manipulation Language)``` command olaraq göstərilən ```SELECT``` -də bura aiddir.
+
+Entity Framework Core istifadə edərək SELECT sorğularını yaradılır və icra edilir. 
+
+Table-lar arasında ```Relation``` mövcud olarsa Data-ların gətirilməsindən asılı olaraq bu proses bir qədər fərqlənir. 
+Yəni, SELECT sorğusu yaradılarkən Related Data-ların da bu sorğuya əlavə olunma prosesi həm manual, həm də avtomatik ola bilər. Bu anlayış C#-da ```Loading``` olaraq adlandırılır.
+
+Loading 3 yerə bölünür. Eager Loading, Explicit Loading və Lazy Loading. 
 
 
 ## Eager Loading
 
-```Eager Loading``` generate olunan SELECT sorğuya ```Related Data```-ların parça-parça əlavə edilməsini və bu prosesin `istəkli` şəkildə baş verməsini təmin edən bir yoldur.
+```Eager Loading``` generate olunan SELECT sorğusuna ```Related Data```-ların parça-parça əlavə edilməsini və bu prosesin `istəkli` şəkildə baş verməsini təmin edən bir yoldur.
 Eager Loading ilə SELECT sorğusu həyata keçirilən zaman əlavə yüklənmənin qarşısı alınır. 
-Əlavə yüklənmə dedikdə, Entity class'ın daxilində hər hansısa Navigation property mövcuddursa, yəni hər hansısa bir table ilə relation varsa, bu zaman Entity dataları üçün SELECT sorğusu yaradılarkən JOIN-lər sorğuda yer almayacaq.
+Əlavə yüklənmə dedikdə, Database-də yer alan Entity class'ın hər hansısa bir Table ilə Relation-ı varsa, bu zaman Entity üçün SELECT sorğusu yaradılarkən Related Data-ların gətirilməyəcək.
+
+Entity Framework Core işlədilən proyektdə yüklənmə by default Eager Loading-dir.
 
 ```csharp
 List<TEntity> entityList = await _context.Set<TEntity>().ToListAsync();
 ```
-Yuxarıda yerləşən ```LINQ Method Syntax``` ilə yaradılan sorğunun nəticəsi aşağıdaki kimi olacaq
+Yuxarıda yerləşən ```LINQ Method Syntax``` ilə yaradılan sorğunun nəticəsi aşağıdaki kimi olacaq.
 ```sql
 SELECT * FROM Entities
 ```
 
-Sözügedən əlavə yüklənmənin qarşısı alınması nəticəsində göründüyü kimi, heç bir JOIN prosesi query-də yer almayıb. Bu da o deməkdir ki, Navigation olaraq qeyd olunan property null olaraq qayıdacaq.
-Relational olan data(lar) ehtiyac yarandığı təqdirdə, bu JOIN(lər) bizim tərəfimizdən manual olaraq əlavə edilməlidir. ```Include``` və ```ThenInclude``` method'lar məhz bunun üçündür.
-       
-Əgər LINQ Method Syntax və ya LINQ Query Syntax vasitəsilə SELECT sorğusu yaradıb Realted Data-ları əldə etmək istəsək, by default Eager Loading işə düşəcək. 
+Sözügedən əlavə yüklənmənin qarşısı alınması nəticəsində göründüyü kimi, heç bir JOIN prosesi query-də yer almayıb. Bu da o deməkdir ki, Entity obyekt(lər) əldə olunan zaman Navigation property null dəyərə sahib olacaq.
+Related data-lara ehtiyac yarandığı təqdirdə, bu JOIN(lər) bizim tərəfimizdən manual olaraq əlavə edilməlidir. Entity Framework Core-da JOIN-lər ```Include``` və ```ThenInclude``` method'lar vasitəsi ilə yaradılan sorğuya əlavə edilir.
+
+Eager Loading-in istifadəsi aşağıdaki şəkildə olur.
 
 ```csharp
-List<TEntity> entityList = await _context.Set<TEntity>().Include(e=>e.TEntities2).ToListAsync();
+//LINQ Method Syntax
+List<TEntity> entityListMethodSyntax = await _context.Set<TEntity>().Include(e=>e.TEntities2).ToListAsync();
 
 // və ya
 
-List<TEntity> entityList = await _context.Set<TEntity>().Include("TEntities2").ToListAsync();
-
+//LINQ Query Syntax
+List<TEntity> entityListQuerySyntax = await (from e in _context.Set<TEntity>()
+                        join e2 in _context.Set<TEntities2>() on e.Id equals e2.TEntityId
+                        select e).ToListAsync();
 ```
 
-Eager Loading əvəzinə Lazy Loading-in işə düşməsini istəyiriksə, bu zaman ```DbContext```-lə bağlı müəyyən konfiqurasiyalara ehtiyac var. 
+Yuxarıda yerləşən LINQ sorğularının nəticəsi aşağıdaki şəkildə olacaq.
 
+```sql
+SELECT *
+FROM [TEntity] AS [e]
+INNER JOIN [TEntities2] AS [e2] ON [e].[Id] = [e2].[TEntityId]
+```
+
+```Not:``` Query-ləri əldə etmək üçün IQueryable-a ToQueryString() method tətbiq edilir. Bu method nəticədə yaradılacaq Query-ni string tipində geriyə qaytarır.
 
 ## Explicit Loading
 
@@ -77,7 +95,7 @@ Explicit Loading tətbiq edilərkən data-larını əldə etmək istənilən Tab
        }
 ```
 
-```Not:Relational Datalar əldə edildikdən sonra əsas data-larla Context vasitəsilə əlaqələndirilərək saxlanılır. Çünki EntityFramework daha əvvəldə execute edilən sorğular nəticəsində get olunan data-ları daha sonraki proseslərdə istifadə edir.```
+```Not:``` Relational Datalar əldə edildikdən sonra əsas data-larla Context vasitəsilə əlaqələndirilərək saxlanılır. Çünki EntityFramework daha əvvəldə execute edilən sorğular nəticəsində get olunan data-ları daha sonraki proseslərdə istifadə edir.
 
 
 Collection method istifadəsi zamanı biz Relational data-ları Query method ilə Queryable halına salıb həm Aggregate operatorları, həm də filterasiya tətbiq edə bilərik.
