@@ -16,7 +16,7 @@ Loading 3 yerə bölünür. Eager Loading, Explicit Loading və Lazy Loading.
 
 ```Eager Loading``` generate olunan SELECT sorğusuna ```Related Data```-ların parça-parça əlavə edilməsini və bu prosesin `istəkli` şəkildə baş verməsini təmin edən bir yoldur.
 Eager Loading ilə SELECT sorğusu həyata keçirilən zaman əlavə yüklənmənin qarşısı alınır. 
-Əlavə yüklənmə dedikdə, Database-də yer alan Entity class'ın hər hansısa bir Table ilə Relation-ı varsa, bu zaman Entity üçün SELECT sorğusu yaradılarkən Related Data-ların gətirilməyəcək.
+Əlavə yüklənmə dedikdə, Database-də yer alan Entity class'ın hər hansısa bir Table ilə Relation-ı varsa, bu zaman Entity üçün SELECT sorğusu yaradılarkən Related Data-lar gətirilməyəcək, bu prosesi bizim manual etməyimiz üçün şərait yaradılacaq.
 
 Entity Framework Core işlədilən proyektdə yüklənmə by default Eager Loading-dir.
 
@@ -53,7 +53,7 @@ FROM [TEntity] AS [e]
 INNER JOIN [TEntities2] AS [e2] ON [e].[Id] = [e2].[TEntityId]
 ```
 
-```Not:``` Query-ləri əldə etmək üçün IQueryable-a ToQueryString() method tətbiq edilir. Bu method nəticədə yaradılacaq Query-ni string tipində geriyə qaytarır.
+>:bulb:**Not:** Query-ləri əldə etmək üçün IQueryable-a ToQueryString() method tətbiq edilir. Bu method nəticədə yaradılacaq Query-ni string tipində geriyə qaytarır.
 
 ## Explicit Loading
 
@@ -95,7 +95,7 @@ Explicit Loading tətbiq edilərkən data-larını əldə etmək istənilən Tab
        }
 ```
 
-```Not:``` Relational Datalar əldə edildikdən sonra əsas data-larla Context vasitəsilə əlaqələndirilərək saxlanılır. Çünki EntityFramework daha əvvəldə execute edilən sorğular nəticəsində get olunan data-ları daha sonraki proseslərdə istifadə edir.
+>:bulb:**Not:** Relational Datalar əldə edildikdən sonra əsas data-larla Context vasitəsilə əlaqələndirilərək saxlanılır. Çünki EntityFramework daha əvvəldə execute edilən sorğular nəticəsində get olunan data-ları daha sonraki proseslərdə istifadə edir.
 
 
 Collection method istifadəsi zamanı biz Relational data-ları Query method ilə Queryable halına salıb həm Aggregate operatorları, həm də filterasiya tətbiq edə bilərik.
@@ -126,7 +126,7 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
 
 ```
 
-Həmçinin, bütün Entity-lər daxilində Relation-u işarəliyən bütün property-lər ```Virtual``` olaraq qeyd olunmalıdır. 
+Həmçinin, bütün Entity-lər daxilində Relational Data-ları işarəliyən bütün property-lər ```Virtual``` olaraq qeyd olunmalıdır. 
 
 Əks təqdirdə, ```System.InvalidOperationException``` ilə qarşılaşacağıq.
 
@@ -207,11 +207,13 @@ public class TEntity2
     public TEntity TEntity { get; set; }
 }
 ```
-## N+1 Selects Problem
+## N+1 Problem (N+1 Selects Problem)
 
 Lazy Loading enable olduqda, dataların navigation property-lərə müraciəti zamanı sorğu yaradaraq məlumatları gətirdiyini artıq bilirik. Bu müraciətlər döngü içərisində hər bir entity obyekt üçün baş verdikdə, dəfələrlə sorğu yaradılaraq database-ə göndərilir. Bu proses N+1 problemi adlanır. Çünki dəfələrlə sorğu göndərilməsi performans baxımından heç də yaxşı deyil və həmçinin bu, database connection-ın davamlı olaraq açıq qalmasına gətirib çıxarır. Eager Loading istifadəsi bu problemin qarşısını rahatlıqla alır.
 
+Həmçinin N+1 Selects Problem olaraq da adlandılırmasının səbəbi abstract olaraq yox, bir başa əsas mexanizmi izzah etmək üçündür.
 
+>:bulb:**Not:** Burada 1, Select sorğusu zamanı gətirilən əsas obyektləri(ICollection). N isə əsas obyektlərə hər dəfə döngü ilə müraciət olunan zaman gətirilən Relational Data-ları təmsil edir.
 
 ## LinkedIn
 
