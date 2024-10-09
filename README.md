@@ -1,7 +1,7 @@
 # Loading Related Data
 
 Bildiyimiz kimi Database-lə əlaqə qurub, datalar üzərində işləmək üçün ```ORM (Object Relational Mapping)``` istifadə olunur.
-ORM vasitəsi ilə Database-lə bağlı əməliyyatları istər QUERY və Method-lar vasitəsi ilə həyata keçirmək mümkündür. 
+ORM vasitəsi ilə Database-lə bağlı əməliyyatları istər QUERY, istərsə də Method-lar vasitəsi ilə həyata keçirmək mümkündür. 
 Bir sıra mənbələrdə ```DQL(Data Query Language)``` command, bəzi mənbələrdə isə ```DML(Data Manipulation Language)``` command olaraq göstərilən ```SELECT``` -də bura aiddir.
 
 Entity Framework Core istifadə edərək SELECT sorğularını yaradılır və icra edilir. 
@@ -213,7 +213,7 @@ Lazy Loading enable olduqda, dataların navigation property-lərə müraciəti z
 
 Həmçinin N+1 Selects Problem olaraq da adlandılırmasının səbəbi abstract olaraq yox, bir başa əsas mexanizmi izzah etmək üçündür.
 
->:bulb:**Not:** Burada 1, Select sorğusu zamanı gətirilən əsas obyektləri(ICollection). N isə əsas obyektlərə hər dəfə döngü ilə müraciət olunan zaman gətirilən Relational Data-ları təmsil edir.
+>:bulb:**Not:** Burada 1, Select sorğusu zamanı gətirilən əsas obyekti(ICollection). N isə əsas obyektə hər dəfə döngü ilə müraciət olunan zaman gətirilən Relational Data-ları təmsil edir.
 
 ## LinkedIn
 
